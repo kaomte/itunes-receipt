@@ -114,7 +114,7 @@ module Itunes
       @version_external_identifier = receipt_attributes[:version_external_identifier]
     end
 
-    def as_json
+    def as_json(*)
       {
         :quantity                => @quantity,
         :product_id              => @product_id,

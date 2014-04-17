@@ -1,7 +1,19 @@
 require 'spec_helper'
 
 describe Itunes::Receipt do
+  describe '.to_json' do
+    before do
+      fake_json :valid
+    end
 
+    it 'should convert to json' do
+      receipt = Itunes::Receipt.verify! 'valid_application'
+      json = receipt.to_json
+      json.should be_instance_of String
+      JSON.parse(json).should be_instance_of Hash
+    end
+  end
+  
   describe '.verify!' do
     it 'should support sandbox mode' do
       sandbox_mode do
