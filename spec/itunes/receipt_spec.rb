@@ -3,14 +3,18 @@ require 'spec_helper'
 describe Itunes::Receipt do
   describe '.to_json' do
     before do
-      fake_json :valid
+      fake_json :valid_application
     end
 
     it 'should convert to json' do
       receipt = Itunes::Receipt.verify! 'valid_application'
+
       json = receipt.to_json
       json.should be_instance_of String
-      JSON.parse(json).should be_instance_of Hash
+
+      hash = JSON.parse(json)
+      hash.should be_instance_of Hash
+      hash["in_app"].length.should == 2
     end
   end
   

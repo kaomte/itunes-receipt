@@ -1,1 +1,14 @@
-{"receipt":{"item_id":"420862234", "original_transaction_id":"1000000001479608", "bvrs":"1.0", "product_id":"com.cerego.iknow.30d", "purchase_date":"2011-02-17 06:20:57 Etc/GMT", "quantity":"1", "bid":"com.cerego.iknow", "original_purchase_date":"2011-02-17 06:20:57 Etc/GMT", "transaction_id":"1000000001479608"}, "status":0}
+{
+  "status": 0,
+  "receipt": {
+    "transaction_id": "1000000001479608",
+    "original_purchase_date": "2011-02-17 06:20:57 Etc\/GMT",
+    "bid": "com.cerego.iknow",
+    "quantity": "1",
+    "purchase_date": "2011-02-17 06:20:57 Etc\/GMT",
+    "product_id": "com.cerego.iknow.30d",
+    "bvrs": "1.0",
+    "original_transaction_id": "1000000001479608",
+    "item_id": "420862234"
+  }
+}

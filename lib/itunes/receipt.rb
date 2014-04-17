@@ -114,21 +114,6 @@ module Itunes
       @version_external_identifier = receipt_attributes[:version_external_identifier]
     end
 
-    def as_json(*)
-      {
-        :quantity                => @quantity,
-        :product_id              => @product_id,
-        :transaction_id          => @transaction_id,
-        :purchase_date           => @purchase_date,
-        :original_transaction_id => @original.try(:transaction_id),
-        :original_purchase_date  => @original.try(:purchase_date),
-        :is_trial_period         => @is_trial_period
-      }.tap do |hash|
-        hash[:application_version] = @application_version if @application_version.present?
-        hash[:bundle_id]           = @bundle_id           if @bundle_id.present?
-      end
-    end
-
     def application_receipt?
       !@bundle_id.nil?
     end
