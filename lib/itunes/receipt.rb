@@ -146,7 +146,7 @@ module Itunes
     private
 
     def self.post_to_endpoint(request_data, endpoint = Itunes.endpoint)
-      response = RestClient.post(
+      response = Faraday.post(
         endpoint,
         request_data.to_json
       )
